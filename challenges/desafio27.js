@@ -1,7 +1,8 @@
+const companyName = "PASSAREDO";
 const passaredoFlightsLength = db.voos.count(
   {
     $and: [
-      { "empresa.nome": "PASSAREDO" },
+      { "empresa.nome": companyName },
       { natureza: "Doméstica" },
     ],
   },
@@ -9,12 +10,12 @@ const passaredoFlightsLength = db.voos.count(
 
 db.resumoVoos.insertOne(
   {
-    empresa: "PASSAREDO",
+    empresa: companyName,
     totalVoosDomesticos: passaredoFlightsLength,
   },
 );
 
 db.resumoVoos.findOne(
-  { empresa: "PASSAREDO" },
+  { empresa: companyName },
   { _id: 0 },
 );
