@@ -1,1 +1,3 @@
-// desafio 3
+db.voos.count(
+  { "empresa.nome": "AZUL" },
+);
