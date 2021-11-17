@@ -1,12 +1,12 @@
 const companyName = "LATAM AIRLINES BRASIL";
-const latamDomesticFlights = db.voos.count(
+const latamDomesticFlights = db.voos.find(
   {
     $and: [
       { "empresa.nome": companyName },
       { natureza: "Doméstica" },
     ],
   },
-);
+).count();
 
 db.resumoVoos.insertOne(
   {
